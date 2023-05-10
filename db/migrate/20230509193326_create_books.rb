@@ -5,7 +5,7 @@ class CreateBooks < ActiveRecord::Migration[7.0]
       t.integer :price
       t.float :rating
       t.boolean :purchasable_online
-      # t.integer :author_id, foreign_key:true
+      t.references :author, null: false, foreign_key: true
 
       t.timestamps
     end
