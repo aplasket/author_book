@@ -2,7 +2,7 @@
 # Iteration 1
 ### CRUD
 
-[ ] done
+[x] done
 
 ## User Story 1, Author Index 
 
@@ -12,7 +12,7 @@ When I visit '/authors'
 Then I see the name of each (all) author record in the system
 Example:
 - J.K. Rowling
-- Brene Brown
+- Maya Angelou
 
 [ ] done
 
