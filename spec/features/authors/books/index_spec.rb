@@ -31,7 +31,7 @@ RSpec.describe "/authors/:author_id/books", type: :feature do
       expect(page).to have_content("Book ID: #{book_2.id}")
       expect(page).to have_content("Author ID: #{book_2.author_id}")
     
-      save_and_open_page
+      # save_and_open_page
     end
   end
 end
