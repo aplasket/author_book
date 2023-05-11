@@ -13,6 +13,7 @@ RSpec.describe "/books (Book Index Page)", type: :feature do
     it "I see all books and their attributes" do
       visit "/books"
 
+      expect(page).to have_content("All Books")
       expect(page).to have_content(book_1.title)
       expect(page).to have_content("Price: $#{book_1.price}")
       expect(page).to have_content("Rating: #{book_1.rating}")
