@@ -2,27 +2,30 @@
 # Iteration 1
 ### CRUD
 
-[ ] done
+[x] done
 
-## User Story 1, Parent Index 
+## User Story 1, Author Index 
 
 For each parent table
 As a visitor
-When I visit '/parents'
-Then I see the name of each parent record in the system
+When I visit '/authors'
+Then I see the name of each (all) author record in the system
+Example:
+- J.K. Rowling
+- Maya Angelou
 
 [ ] done
 
-## User Story 2, Parent Show 
+## User Story 2, Author Show 
 
 As a visitor
-When I visit '/parents/:id'
-Then I see the parent with that id including the parent's attributes
-(data from each column that is on the parent table)
+When I visit '/authors/:id'
+Then I see the parent with that id including the author's attributes
+(data from each column that is on the author table)
 
 [ ] done
 
-## User Story 3, Child Index 
+## User Story 3, Book Index 
 
 As a visitor
 When I visit '/child_table_name'
