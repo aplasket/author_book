@@ -49,9 +49,8 @@ As a visitor
 When I visit '/parents/:parent_id/child_table_name'
 Then I see each Child that is associated with that Parent with each Child's attributes
 (data from each column that is on the child table)
-ActiveRecord
 
-
+### ActiveRecord
 ## User Story 6, Parent Index sorted by Most Recently Created 
 [ ] done
 
@@ -67,9 +66,8 @@ And next to each of the records I see when it was created
 As a visitor
 When I visit a parent's show page
 I see a count of the number of children associated with this parent
-Usability
 
-
+### Usability
 ## User Story 8, Child Index Link
 [ ] done
 
@@ -154,9 +152,9 @@ When I click the button to submit the form "Update Child"
 Then a `PATCH` request is sent to '/child_table_name/:id',
 the child's data is updated,
 and I am redirected to the Child Show page where I see the Child's updated information
-ActiveRecord
 
 
+### ActiveRecord
 ## User Story 15, Child Index only shows `true` Records 
 [ ] done
 
@@ -173,9 +171,8 @@ When I visit the Parent's children Index Page
 Then I see a link to sort children in alphabetical order
 When I click on the link
 I'm taken back to the Parent's children Index Page where I see all of the parent's children in alphabetical order
-Usability
 
-
+### Usability
 ## User Story 17, Parent Update From Parent Index Page 
 [ ] done
 
@@ -183,7 +180,7 @@ As a visitor
 When I visit the parent index page
 Next to every parent, I see a link to edit that parent's info
 When I click the link
-I should be taken to that parent's edit page where I can update its information just like in ## User Story 12
+I should be taken to that parent's edit page where I can update its information just like in User Story 12
 
 
 ## User Story 18, Child Update From Childs Index Page 
@@ -193,9 +190,10 @@ As a visitor
 When I visit the `child_table_name` index page or a parent `child_table_name` index page
 Next to every child, I see a link to edit that child's info
 When I click the link
-I should be taken to that `child_table_name` edit page where I can update its information just like in ## User Story 14
+I should be taken to that `child_table_name` edit page where I can update its information just like in User Story 14
+
 # Iteration 3
-CRUD
+### CRUD
 
 
 ## User Story 19, Parent Delete 
@@ -220,9 +218,8 @@ When I click the link
 Then a 'DELETE' request is sent to '/child_table_name/:id',
 the child is deleted,
 and I am redirected to the child index page where I no longer see this child
-ActiveRecord
 
-
+### ActiveRecord
 ## User Story 21, Display Records Over a Given Threshold 
 [ ] done
 
@@ -231,9 +228,9 @@ When I visit the Parent's children Index Page
 I see a form that allows me to input a number value
 When I input a number value and click the submit button that reads 'Only return records with more than `number` of `column_name`'
 Then I am brought back to the current index page with only the records that meet that threshold shown.
-Usability
 
 
+### Usability
 ## User Story 22, Parent Delete From Parent Index Page 
 [ ] done
 
@@ -256,9 +253,9 @@ I should be taken to the `child_table_name` index page where I no longer see tha
 
 # Extensions
 
-[ ] done
 
 Extension 1: Sort Parents by Number of Children 
+[ ] done
 
 As a visitor
 When I visit the Parents Index Page
@@ -266,9 +263,9 @@ Then I see a link to sort parents by the number of `child_table_name` they have
 When I click on the link
 I'm taken back to the Parent Index Page where I see all of the parents in order of their count of `child_table_name` (highest to lowest) And, I see the number of children next to each parent name
 
-[ ] done
 
 Extension 2: Search by name (exact match)
+[ ] done
 
 As a visitor
 When I visit an index page ('/parents') or ('/child_table_name')
@@ -276,9 +273,9 @@ Then I see a text box to filter results by keyword
 When I type in a keyword that is an exact match of one or more of my records and press the Search button
 Then I only see records that are an exact match returned on the page
 
-[ ] done
 
 Extension 3: Search by name (partial match)
+[ ] done
 
 As a visitor
 When I visit an index page ('/parents') or ('/child_table_name')
