@@ -34,7 +34,7 @@ Then I see each Book in the system including the book's attributes
 
 
 ## User Story 4, Child Show 
-[ ] done
+[x] done
 
 As a visitor
 When I visit '/child_table_name/:id'
