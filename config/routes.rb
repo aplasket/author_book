@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get "/authors", to: "authors#index"
-  get "/authors/:id"
+  get "/authors/:id", to: "authors#show"
 end

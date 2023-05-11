@@ -14,13 +14,13 @@ Example:
 - J.K. Rowling
 - Maya Angelou
 
-[ ] done
+[x] done
 
 ## User Story 2, Author Show 
 
 As a visitor
 When I visit '/authors/:id'
-Then I see the parent with that id including the author's attributes
+Then I see the Author with that id including the author's attributes
 (data from each column that is on the author table)
 
 [ ] done
