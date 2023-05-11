@@ -25,7 +25,7 @@ Then I see the Author with that id including the author's attributes
 
 
 ## User Story 3, Book Index 
-[ ] done
+[x] done
 
 As a visitor
 When I visit '/books'
