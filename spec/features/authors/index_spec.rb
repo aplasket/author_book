@@ -9,6 +9,7 @@ RSpec.describe "/authors (Author Index Page)", type: :feature do
     it "I see the name of each author" do
       visit "/authors"
       # save_and_open_page
+      expect(page).to have_content("Authors")
       expect(page).to have_content(author_1.name)
       expect(page).to have_content(author_2.name)
     end
@@ -28,4 +29,12 @@ RSpec.describe "/authors (Author Index Page)", type: :feature do
       expect(page).to have_content("ID: #{author_1.id}")
     end
   end
+
+  #user story 5:
+  # As a visitor
+  # When I visit '/parents/:parent_id/child_table_name'
+  # Then I see each Child that is associated with that Parent with each Child's attributes
+  # (data from each column that is on the child table)
+
+  describe "As a visitor"
 end
