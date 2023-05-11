@@ -25,6 +25,7 @@ RSpec.describe "/authors (Author Index Page)", type: :feature do
       expect(page).to have_content("#{author_1.name}")
       expect(page).to have_content("Currently Alive: #{author_1.currently_alive}")
       expect(page).to have_content("Age: #{author_1.age}")
+      expect(page).to have_content("ID: #{author_1.id}")
     end
   end
 end
