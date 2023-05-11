@@ -8,7 +8,7 @@ RSpec.describe "/authors (Author Index Page)", type: :feature do
 
     it "I see the name of each author" do
       visit "/authors"
-      
+      # save_and_open_page
       expect(page).to have_content(author_1.name)
       expect(page).to have_content(author_2.name)
     end
