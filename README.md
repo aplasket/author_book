@@ -2,9 +2,9 @@
 # Iteration 1
 ### CRUD
 
-[x] done
 
 ## User Story 1, Author Index 
+[x] done
 
 For each parent table
 As a visitor
@@ -14,36 +14,36 @@ Example:
 - J.K. Rowling
 - Maya Angelou
 
-[x] done
 
 ## User Story 2, Author Show 
+[x] done
 
 As a visitor
 When I visit '/authors/:id'
 Then I see the Author with that id including the author's attributes
 (data from each column that is on the author table)
 
-[ ] done
 
 ## User Story 3, Book Index 
+[x] done
 
 As a visitor
-When I visit '/child_table_name'
-Then I see each Child in the system including the Child's attributes
-(data from each column that is on the child table)
+When I visit '/books'
+Then I see each Book in the system including the book's attributes
+(data from each column that is on the book table)
 
-[ ] done
 
 ## User Story 4, Child Show 
+[ ] done
 
 As a visitor
 When I visit '/child_table_name/:id'
 Then I see the child with that id including the child's attributes
 (data from each column that is on the child table)
 
-[ ] done
 
 ## User Story 5, Parent Children Index 
+[ ] done
 
 As a visitor
 When I visit '/parents/:parent_id/child_table_name'
@@ -51,43 +51,43 @@ Then I see each Child that is associated with that Parent with each Child's attr
 (data from each column that is on the child table)
 ActiveRecord
 
-[ ] done
 
 ## User Story 6, Parent Index sorted by Most Recently Created 
+[ ] done
 
 As a visitor
 When I visit the parent index,
 I see that records are ordered by most recently created first
 And next to each of the records I see when it was created
 
-[ ] done
 
 ## User Story 7, Parent Child Count
+[ ] done
 
 As a visitor
 When I visit a parent's show page
 I see a count of the number of children associated with this parent
 Usability
 
-[ ] done
 
 ## User Story 8, Child Index Link
+[ ] done
 
 As a visitor
 When I visit any page on the site
 Then I see a link at the top of the page that takes me to the Child Index
 
-[ ] done
 
 ## User Story 9, Parent Index Link
+[ ] done
 
 As a visitor
 When I visit any page on the site
 Then I see a link at the top of the page that takes me to the Parent Index
 
-[ ] done
 
 ## User Story 10, Parent Child Index Link
+[ ] done
 
 As a visitor
 When I visit a parent show page ('/parents/:id')
@@ -96,9 +96,9 @@ Then I see a link to take me to that parent's `child_table_name` page ('/parents
 # Iteration 2
 ### CRUD
 
-[ ] done
 
 ## User Story 11, Parent Creation 
+[ ] done
 
 As a visitor
 When I visit the Parent Index page
@@ -111,9 +111,9 @@ Then a `POST` request is sent to the '/parents' route,
 a new parent record is created,
 and I am redirected to the Parent Index page where I see the new Parent displayed.
 
-[ ] done
 
 ## User Story 12, Parent Update 
+[ ] done
 
 As a visitor
 When I visit a parent show page
@@ -126,9 +126,9 @@ Then a `PATCH` request is sent to '/parents/:id',
 the parent's info is updated,
 and I am redirected to the Parent's Show page where I see the parent's updated info
 
-[ ] done
 
 ## User Story 13, Parent Child Creation 
+[ ] done
 
 As a visitor
 When I visit a Parent Children Index page
@@ -141,9 +141,9 @@ Then a `POST` request is sent to '/parents/:parent_id/child_table_name',
 a new child object/row is created for that parent,
 and I am redirected to the Parent Childs Index page where I can see the new child listed
 
-[ ] done
 
 ## User Story 14, Child Update 
+[ ] done
 
 As a visitor
 When I visit a Child Show page
@@ -156,17 +156,17 @@ the child's data is updated,
 and I am redirected to the Child Show page where I see the Child's updated information
 ActiveRecord
 
-[ ] done
 
 ## User Story 15, Child Index only shows `true` Records 
+[ ] done
 
 As a visitor
 When I visit the child index
 Then I only see records where the boolean column is `true`
 
-[ ] done
 
 ## User Story 16, Sort Parent's Children in Alphabetical Order by name 
+[ ] done
 
 As a visitor
 When I visit the Parent's children Index Page
@@ -175,9 +175,9 @@ When I click on the link
 I'm taken back to the Parent's children Index Page where I see all of the parent's children in alphabetical order
 Usability
 
-[ ] done
 
 ## User Story 17, Parent Update From Parent Index Page 
+[ ] done
 
 As a visitor
 When I visit the parent index page
@@ -185,21 +185,21 @@ Next to every parent, I see a link to edit that parent's info
 When I click the link
 I should be taken to that parent's edit page where I can update its information just like in ## User Story 12
 
-[ ] done
 
 ## User Story 18, Child Update From Childs Index Page 
+[ ] done
 
 As a visitor
 When I visit the `child_table_name` index page or a parent `child_table_name` index page
 Next to every child, I see a link to edit that child's info
 When I click the link
 I should be taken to that `child_table_name` edit page where I can update its information just like in ## User Story 14
-Iteration 3
+# Iteration 3
 CRUD
 
-[ ] done
 
 ## User Story 19, Parent Delete 
+[ ] done
 
 As a visitor
 When I visit a parent show page
@@ -209,9 +209,9 @@ Then a 'DELETE' request is sent to '/parents/:id',
 the parent is deleted, and all child records are deleted
 and I am redirected to the parent index page where I no longer see this parent
 
-[ ] done
 
 ## User Story 20, Child Delete 
+[ ] done
 
 As a visitor
 When I visit a child show page
@@ -222,9 +222,9 @@ the child is deleted,
 and I am redirected to the child index page where I no longer see this child
 ActiveRecord
 
-[ ] done
 
 ## User Story 21, Display Records Over a Given Threshold 
+[ ] done
 
 As a visitor
 When I visit the Parent's children Index Page
@@ -233,9 +233,9 @@ When I input a number value and click the submit button that reads 'Only return 
 Then I am brought back to the current index page with only the records that meet that threshold shown.
 Usability
 
-[ ] done
 
 ## User Story 22, Parent Delete From Parent Index Page 
+[ ] done
 
 As a visitor
 When I visit the parent index page
@@ -252,7 +252,9 @@ When I visit the `child_table_name` index page or a parent `child_table_name` in
 Next to every child, I see a link to delete that child
 When I click the link
 I should be taken to the `child_table_name` index page where I no longer see that child
-Extensions
+
+
+# Extensions
 
 [ ] done
 

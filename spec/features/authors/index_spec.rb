@@ -14,6 +14,7 @@ RSpec.describe "/authors (Author Index Page)", type: :feature do
     end
   end
 
+  #user story 2
   describe "as a visitor, when I visit author/:id page" do
     let!(:author_1) { Author.create!(name: "J.K. Rowling", currently_alive: true, age: 57 )}
     let!(:author_2) { Author.create!(name: "Maya Angelou", currently_alive: false, age: 86 )}
