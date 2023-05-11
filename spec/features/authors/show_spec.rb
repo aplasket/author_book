@@ -8,7 +8,7 @@ RSpec.describe "/authors/:id (Author ID Page)", type: :feature do
     
     it "the Author of that id and all its attributes" do
       visit "/authors/#{author_1.id}"
-      save_and_open_page
+      # save_and_open_page
       expect(page).to have_content("#{author_1.name}")
       expect(page).to have_content("Currently Alive: #{author_1.currently_alive}")
       expect(page).to have_content("Age: #{author_1.age}")
