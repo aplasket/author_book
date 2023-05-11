@@ -28,9 +28,9 @@ Then I see the Author with that id including the author's attributes
 ## User Story 3, Book Index 
 
 As a visitor
-When I visit '/child_table_name'
-Then I see each Child in the system including the Child's attributes
-(data from each column that is on the child table)
+When I visit '/books'
+Then I see each Book in the system including the book's attributes
+(data from each column that is on the book table)
 
 [ ] done
 
