@@ -43,7 +43,7 @@ Then I see the child with that id including the child's attributes
 
 
 ## User Story 5, Parent Children Index 
-[ ] done
+[x] done
 
 As a visitor
 When I visit '/parents/:parent_id/child_table_name'
