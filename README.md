@@ -52,7 +52,7 @@ Then I see each Child that is associated with that Parent with each Child's attr
 
 ### ActiveRecord
 ## User Story 6, Parent Index sorted by Most Recently Created 
-[ ] done
+[x] done
 
 As a visitor
 When I visit the parent index,
