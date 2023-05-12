@@ -3,7 +3,6 @@ class AuthorsController < ApplicationController
     @authors = Author.sort_by_creation
   end
 
-
   def show
     @author = Author.find(params[:id])
   end
