@@ -29,7 +29,7 @@ RSpec.describe "/authors/:id (Author ID Page)", type: :feature do
   #I see a count of the number of children associated with this parent
     it "total count of books associated with this author" do
       visit "/authors/#{author_1.id}"
-      save_and_open_page
+      # save_and_open_page
       expect(page).to have_content("Total Count of Books by this Author: 2")
     end
   end
