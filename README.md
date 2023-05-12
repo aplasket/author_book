@@ -61,7 +61,7 @@ And next to each of the records I see when it was created
 
 
 ## User Story 7, Parent Child Count
-[ ] done
+[x] done
 
 As a visitor
 When I visit a parent's show page
@@ -69,7 +69,7 @@ I see a count of the number of children associated with this parent
 
 ### Usability
 ## User Story 8, Child Index Link
-[ ] done
+[x] done
 
 As a visitor
 When I visit any page on the site
