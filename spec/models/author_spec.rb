@@ -20,4 +20,25 @@ RSpec.describe Author, type: :model do
       expect(Author.sort_by_creation).to eq(expected)
     end
   end
+
+  #user story #7
+  describe "instance methods" do
+    let!(:author_1) { Author.create!(name: "J.K. Rowling", currently_alive: true, age: 57 )}
+    let!(:author_2) { Author.create!(name: "Maya Angelou", currently_alive: false, age: 86 )}
+    let!(:author_3) { Author.create!(name: "Brene Brown", currently_alive: true, age: 57 )}
+
+    let!(:book_1) { author_1.books.create!(title: "Harry Potter and the Sorcerer's Stone", price: 10, rating: 8.9, purchasable_online: true)}
+    let!(:book_2) { author_1.books.create!(title: "Harry Potter, Original Manuscript", price: 2000, rating: 4.9, purchasable_online: false)}
+    let!(:book_3) { author_2.books.create!(title: "I Know Why the Caged Bird Sings", price: 24, rating: 9.9, purchasable_online: true)}
+    let!(:book_4) { author_2.books.create!(title: "Complete Autobiography and Poems", price: 20, rating: 7.9, purchasable_online:false)}
+    let!(:book_5) { author_3.books.create!(title: "Daring Greatly", price: 15, rating: 7.0, purchasable_online: true)}
+    let!(:book_6) { author_3.books.create!(title: "Women and Shame, Original Manuscript", price: 225, rating: 9.1, purchasable_online: false)}
+
+    describe "#count_books" do
+      it "returns the number of books associated with an author" do
+        expected = 2
+        expect(author_1.count_books).to eq(expected)
+      end
+    end
+  end
 end

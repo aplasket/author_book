@@ -4,4 +4,8 @@ class Author < ApplicationRecord
   def self.sort_by_creation
     order(created_at: :desc)
   end
+
+  def count_books
+    books.count
+  end
 end
