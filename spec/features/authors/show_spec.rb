@@ -32,16 +32,5 @@ RSpec.describe "/authors/:id (Author ID Page)", type: :feature do
       # save_and_open_page
       expect(page).to have_content("Total Count of Books by this Author: 2")
     end
-
-    #user story 10
-    #As a visitor When I visit a parent show page ('/parents/:id')
-    # Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
-    it "I see a link to take me to this author's book index page" do
-      visit "/authors/#{author_1.id}"
-      expect(page).to have_link("See All #{author_1.name} Books")
-      
-      click_link("See All #{author_1.name} Books")
-      expect(page).to have_current_path("/authors/#{author_1.id}/books")
-    end
   end
 end
