@@ -96,7 +96,7 @@ Then I see a link to take me to that parent's `child_table_name` page ('/parents
 
 
 ## User Story 11, Parent Creation 
-[ ] done
+[x] done
 
 As a visitor
 When I visit the Parent Index page

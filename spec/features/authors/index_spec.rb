@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "/authors (Author Index Page)", type: :feature do
   #user story 1
-  describe "as a visitor, when I visit author index page" do
+  describe "#as a visitor, when I visit author index page" do
     let!(:author_1) { Author.create!(name: "J.K. Rowling", currently_alive: true, age: 57 )}
     let!(:author_2) { Author.create!(name: "Maya Angelou", currently_alive: false, age: 86 )}
 
@@ -28,7 +28,23 @@ RSpec.describe "/authors (Author Index Page)", type: :feature do
       # save_and_open_page
 
       expect(author_2.name).to appear_before(author_1.name)
-      
+      expect(page).to have_content(author_1.created_at)
+      expect(page).to have_content(author_2.created_at)
+      expect(page).to have_content(author_3.created_at)
+    end
+
+    #user story 11
+    # As a visitor
+    # When I visit the Parent Index page
+    # Then I see a link to create a new Parent record, "New Parent"
+    # When I click this link, it routes to /authors/new 
+    
+    it "shows a link to create a new parent record which routes to a form to create a new record" do
+      visit "/authors"
+      expect(page).to have_link("Create New Author")
+      # save_and_open_page
+      click_link("Create New Author")
+      expect(current_path).to eq("/authors/new")
     end
   end
 end
