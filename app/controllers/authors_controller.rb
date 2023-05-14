@@ -8,13 +8,7 @@ class AuthorsController < ApplicationController
   end
 
   def create
-    author = Author.new({
-      name: params[:name],
-      currently_alive: params[:currently_alive],
-      age: params[:age]
-    })
-
-    author.save
+    author = Author.create!(author_params)
 
     redirect_to '/authors'
   end
@@ -23,4 +17,9 @@ class AuthorsController < ApplicationController
     @author = Author.find(params[:id])
   end
 
+
+  private
+    def author_params
+      params.permit(:name, :currently_alive, :age)
+    end
 end
