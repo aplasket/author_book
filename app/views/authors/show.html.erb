@@ -3,4 +3,5 @@
 <p>Age: <%= @author.age %></p>
 <p>ID: <%= @author.id %></p>
 <p>Total Count of Books by this Author: <%= @author.count_books %></p>
-<a href="/authors/<%="#{@author.id}"%>/books">See All <%="#{@author.name}"%> Books</a>
+<%= link_to "See All Books by #{@author.name}", "/authors/#{@author.id}/books" %>
+<%= link_to "Update #{@author.name}", "/authors/#{@author.id}/edit" %>

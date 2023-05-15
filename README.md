@@ -111,7 +111,7 @@ and I am redirected to the Parent Index page where I see the new Parent displaye
 
 
 ## User Story 12, Parent Update 
-[ ] done
+[x] done
 
 As a visitor
 When I visit a parent show page
