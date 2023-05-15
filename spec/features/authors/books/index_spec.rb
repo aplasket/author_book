@@ -44,5 +44,35 @@ RSpec.describe "/authors/:author_id/books", type: :feature do
       expect(page).to have_content("Author ID: #{book_3.author_id}")
       # save_and_open_page
     end
+
+    #user story 13
+    # As a visitor
+    # When I visit a Parent Children Index page
+    # Then I see a link to add a new adoptable child for that parent "Create Child"
+    # When I click the link
+    # I am taken to '/parents/:parent_id/child_table_name/new' where I see a form to add a new adoptable child
+    # When I fill in the form with the child's attributes:
+    # And I click the button "Create Child"
+    # Then a `POST` request is sent to '/parents/:parent_id/child_table_name',
+    # a new child object/row is created for that parent,
+    # and I am redirected to the Parent Childs Index page where I can see the new child listed
+
+    it "can create a new book belonging to this author" do
+      visit "/authors/#{author_2.id}/books"
+
+      click_button("Create New Book")
+
+      expect(current_path).to eq "/authors/#{author_2.id}/books/new"
+
+      fill_in "Title", with: "Letters to My Daughter"
+      fill_in "Price", with: 15
+      fill_in "Rating", with: 9.7
+      fill_in "Purchasable online", with: true
+      
+      click_button "Save Book"
+
+      expect(current_path).to eq("/authors/#{author_2.id}/books")
+      expect(page).to have_content("Letters to My Daughter")
+    end
   end
 end

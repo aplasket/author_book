@@ -1,0 +1,12 @@
+<%= form_with url: "/authors/#{@author.id}/books", method: :post, local: true do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+  <%= form.label :price %>
+  <%= form.text_field :price %>
+  <%= form.label :rating %>
+  <%= form.text_field :rating %>
+  <%= form.label :purchasable_online %>
+  <%= form.text_field :purchasable_online %>
+
+  <%= form.submit "Save Book" %>
+<% end %>
