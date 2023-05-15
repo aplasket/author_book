@@ -126,7 +126,7 @@ and I am redirected to the Parent's Show page where I see the parent's updated i
 
 
 ## User Story 13, Parent Child Creation 
-[ ] done
+[x] done
 
 As a visitor
 When I visit a Parent Children Index page
