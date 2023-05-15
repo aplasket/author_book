@@ -45,7 +45,6 @@ RSpec.describe "#edit", type: :feature do
       fill_in "Currently alive", with: false 
       fill_in "Age", with: 85
 
-
       click_on("Update Author")
 
       expect(current_path).to eq("/authors/#{author_1.id}")
