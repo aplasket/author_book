@@ -4,4 +4,4 @@
 <p>ID: <%= @author.id %></p>
 <p>Total Count of Books by this Author: <%= @author.count_books %></p>
 <%= link_to "See All Books by #{@author.name}", "/authors/#{@author.id}/books" %>
-<%= button_to "Update #{@author.name}", "/authors/#{@author.id}/edit", method: :get %>
+<%= link_to "Update #{@author.name}", "/authors/#{@author.id}/edit" %>

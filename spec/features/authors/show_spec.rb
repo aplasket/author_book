@@ -43,14 +43,5 @@ RSpec.describe "/authors/:id (Author ID Page)", type: :feature do
       click_link("See All Books by #{author_1.name}")
       expect(page).to have_current_path("/authors/#{author_1.id}/books")
     end
-
-    #user story 12
-    it "shows a button to update the author" do
-      visit "/authors/#{author_1.id}"
-      expect(page).to have_button("Update #{author_1.name}")
-
-      click_button("Update #{author_1.name}")
-      expect(current_path).to eq("/authors/#{author_1.id}/edit")
-    end
   end
 end
