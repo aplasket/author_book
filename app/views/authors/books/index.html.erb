@@ -7,3 +7,5 @@
   <p>Book ID: <%= book.id %></p>
   <p>Author ID: <%= book.author_id %></p></br>
 <% end %>
+
+<%= button_to "Create New Book","/authors/#{@author.id}/books/new", method: :get %>
