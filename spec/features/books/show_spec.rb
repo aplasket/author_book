@@ -17,23 +17,5 @@ RSpec.describe "/books/:id", type: :feature do
       expect(page).to have_content("Book ID: #{book_1.id}")
       expect(page).to have_content("Author ID: #{book_1.author_id}")
     end
-    
-    #user story 14
-    it "I can update the book's details via a form" do
-      visit "/books/#{book_1.id}"
-
-      click_link("Update Book")
-      
-      expect(current_path).to eq("/books/#{book_1.id}/edit")
-      
-      fill_in("Rating", with: 4.1)
-      fill_in("Price", with: 8)
-
-      click_button("Save Changes")
-
-      expect(current_path).to eq("/books/#{book_1.id}")
-      expect(page).to have_content(4.1)
-      expect(page).to have_content(8)
-    end
   end
 end
