@@ -43,7 +43,7 @@ RSpec.describe "/authors/:id (Author ID Page)", type: :feature do
     it "I see a link to delete the Author" do
       visit "/authors/#{author_1.id}"
 
-      click_button("Delete This Author")
+      click_button("Delete #{author_1.name}")
 
       expect(current_path).to eq("/authors")
       expect(page).to_not have_content("#{author_1.name}")

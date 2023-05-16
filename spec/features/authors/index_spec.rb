@@ -14,6 +14,24 @@ RSpec.describe "/authors (Author Index Page)", type: :feature do
       expect(page).to have_content(author_2.name)
     end
 
+    #user story 11    
+    it "shows a link to create a new parent record which routes to a form to create a new record" do
+      visit "/authors"
+      
+      click_link("Create New Author")
+  
+      expect(current_path).to eq("/authors/new")
+    end
+
+    it "I can delete a parent record" do
+      visit "/authors"
+      
+      click_button("Delete #{author_1.name}")
+
+      expect(current_path).to eq("/authors")
+      expect(page).to_not have_content(author_1.name)
+      expect(page).to have_content(author_2.name)
+    end
   end
 
   #user story 6 add on
@@ -30,14 +48,6 @@ RSpec.describe "/authors (Author Index Page)", type: :feature do
       expect(page).to have_content(author_2.created_at)
       expect(page).to have_content(author_3.created_at)
     end
-
-    #user story 11    
-    it "shows a link to create a new parent record which routes to a form to create a new record" do
-      visit "/authors"
-      
-      click_link("Create New Author")
-
-      expect(current_path).to eq("/authors/new")
-    end
   end
+
 end
