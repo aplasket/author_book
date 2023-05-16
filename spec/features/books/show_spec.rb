@@ -17,5 +17,15 @@ RSpec.describe "/books/:id", type: :feature do
       expect(page).to have_content("Book ID: #{book_1.id}")
       expect(page).to have_content("Author ID: #{book_1.author_id}")
     end
+
+    #user story 20
+    it "I see an option to delete the book" do
+      visit "/books/#{book_1.id}"
+
+      click_button("Delete This Book")
+
+      expect(current_path).to eq("/books")
+      expect(page).to_not have_content("#{book_1.title}")
+    end
   end
 end
