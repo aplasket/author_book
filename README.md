@@ -209,7 +209,7 @@ and I am redirected to the parent index page where I no longer see this parent
 
 
 ## User Story 20, Child Delete 
-[ ] done
+[x] done
 
 As a visitor
 When I visit a child show page
