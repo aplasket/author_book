@@ -6,4 +6,6 @@
   <p>Purchasable Online: <%= book.purchasable_online %></p>
   <p>Book ID: <%= book.id %></p>
   <p>Author ID: <%= book.author_id %></p></br>
-<% end %>
+
+  <%= link_to "Update Book", "/books/#{book.id}/edit" %></br></br>
+<% end %></br>
