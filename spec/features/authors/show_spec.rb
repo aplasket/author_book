@@ -38,5 +38,15 @@ RSpec.describe "/authors/:id (Author ID Page)", type: :feature do
       click_link("See All Books by #{author_1.name}")
       expect(page).to have_current_path("/authors/#{author_1.id}/books")
     end
+
+    #user story #19
+    it "I see a link to delete the Author" do
+      visit "/authors/#{author_1.id}"
+save_and_open_page
+      click_button("Delete This Author")
+
+      expect(current_path).to eq("/authors")
+      expect(page).to_not have_content("#{author_1.name}")
+    end
   end
 end

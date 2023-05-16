@@ -184,7 +184,7 @@ I should be taken to that parent's edit page where I can update its information 
 
 
 ## User Story 18, Child Update From Childs Index Page 
-[ ] done
+[x] done
 
 As a visitor
 When I visit the `child_table_name` index page or a parent `child_table_name` index page
