@@ -16,7 +16,7 @@ RSpec.describe "/authors/:id (Author ID Page)", type: :feature do
     
     it "I see the Author of that id and all its attributes" do
       visit "/authors/#{author_1.id}"
-      # save_and_open_page
+      
       expect(page).to have_content("#{author_1.name}")
       expect(page).to have_content("Currently Alive: #{author_1.currently_alive}")
       expect(page).to have_content("Age: #{author_1.age}")
@@ -24,18 +24,13 @@ RSpec.describe "/authors/:id (Author ID Page)", type: :feature do
     end
   
   #user story 7
-  #As a visitor
-  #When I visit a parent's show page
-  #I see a count of the number of children associated with this parent
     it "total count of books associated with this author" do
       visit "/authors/#{author_1.id}"
-      # save_and_open_page
+
       expect(page).to have_content("Total Count of Books by this Author: 2")
     end
 
     #user story 10
-    #As a visitor When I visit a parent show page ('/parents/:id')
-    # Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
     it "I see a link to take me to this author's book index page" do
       visit "/authors/#{author_1.id}"
       expect(page).to have_link("See All Books by #{author_1.name}")

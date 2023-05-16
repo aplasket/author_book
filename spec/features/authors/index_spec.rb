@@ -33,12 +33,7 @@ RSpec.describe "/authors (Author Index Page)", type: :feature do
       expect(page).to have_content(author_3.created_at)
     end
 
-    #user story 11
-    # As a visitor
-    # When I visit the Parent Index page
-    # Then I see a link to create a new Parent record, "New Parent"
-    # When I click this link, it routes to /authors/new 
-    
+    #user story 11    
     it "shows a link to create a new parent record which routes to a form to create a new record" do
       visit "/authors"
       save_and_open_page
