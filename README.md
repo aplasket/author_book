@@ -242,7 +242,7 @@ I am returned to the Parent Index Page where I no longer see that parent
 
 
 ## User Story 23, Child Delete From Childs Index Page 
-[ ] done
+[x] done
 
 As a visitor
 When I visit the `child_table_name` index page or a parent `child_table_name` index page
