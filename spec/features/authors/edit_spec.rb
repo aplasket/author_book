@@ -4,19 +4,19 @@
 require "rails_helper"
 
 RSpec.describe "#edit", type: :feature do
+let!(:author_1) { Author.create!(name: "J.K. Rowling", currently_alive: true, age: 57 )}
+let!(:author_2) { Author.create!(name: "Maya Angelou", currently_alive: false, age: 86 )}
+let!(:author_3) { Author.create!(name: "Brene Brown", currently_alive: true, age: 57 )}
+
+let!(:book_1) { author_1.books.create!(title: "Harry Potter and the Sorcerer's Stone", price: 10, rating: 8.9, purchasable_online: true)}
+let!(:book_2) { author_1.books.create!(title: "Harry Potter, Original Manuscript", price: 2000, rating: 4.9, purchasable_online: false)}
+let!(:book_3) { author_2.books.create!(title: "I Know Why the Caged Bird Sings", price: 24, rating: 9.9, purchasable_online: true)}
+let!(:book_4) { author_2.books.create!(title: "Complete Autobiography and Poems", price: 20, rating: 7.9, purchasable_online:false)}
+let!(:book_5) { author_3.books.create!(title: "Daring Greatly", price: 15, rating: 7.0, purchasable_online: true)}
+let!(:book_6) { author_3.books.create!(title: "Women and Shame, Original Manuscript", price: 225, rating: 9.1, purchasable_online: false)}
+
   describe "when I visit /authors/:id" do
     #user story 12
-    let!(:author_1) { Author.create!(name: "J.K. Rowling", currently_alive: true, age: 57 )}
-    let!(:author_2) { Author.create!(name: "Maya Angelou", currently_alive: false, age: 86 )}
-    let!(:author_3) { Author.create!(name: "Brene Brown", currently_alive: true, age: 57 )}
-
-    let!(:book_1) { author_1.books.create!(title: "Harry Potter and the Sorcerer's Stone", price: 10, rating: 8.9, purchasable_online: true)}
-    let!(:book_2) { author_1.books.create!(title: "Harry Potter, Original Manuscript", price: 2000, rating: 4.9, purchasable_online: false)}
-    let!(:book_3) { author_2.books.create!(title: "I Know Why the Caged Bird Sings", price: 24, rating: 9.9, purchasable_online: true)}
-    let!(:book_4) { author_2.books.create!(title: "Complete Autobiography and Poems", price: 20, rating: 7.9, purchasable_online:false)}
-    let!(:book_5) { author_3.books.create!(title: "Daring Greatly", price: 15, rating: 7.0, purchasable_online: true)}
-    let!(:book_6) { author_3.books.create!(title: "Women and Shame, Original Manuscript", price: 225, rating: 9.1, purchasable_online: false)}
-    
     it "shows a button to update the author" do
       visit "/authors/#{author_1.id}"
       expect(page).to have_content("Update #{author_1.name}")
@@ -26,17 +26,23 @@ RSpec.describe "#edit", type: :feature do
     end
   end
 
-  describe "when I visit /authors/edit" do
-    let!(:author_1) { Author.create!(name: "J.K. Rowling", currently_alive: true, age: 57 )}
-    let!(:author_2) { Author.create!(name: "Maya Angelou", currently_alive: false, age: 86 )}
-    let!(:author_3) { Author.create!(name: "Brene Brown", currently_alive: true, age: 57 )}
+  describe "when I visit /authors" do
+    it "I see a link next to each author to update their info" do
 
-    let!(:book_1) { author_1.books.create!(title: "Harry Potter and the Sorcerer's Stone", price: 10, rating: 8.9, purchasable_online: true)}
-    let!(:book_2) { author_1.books.create!(title: "Harry Potter, Original Manuscript", price: 2000, rating: 4.9, purchasable_online: false)}
-    let!(:book_3) { author_2.books.create!(title: "I Know Why the Caged Bird Sings", price: 24, rating: 9.9, purchasable_online: true)}
-    let!(:book_4) { author_2.books.create!(title: "Complete Autobiography and Poems", price: 20, rating: 7.9, purchasable_online:false)}
-    let!(:book_5) { author_3.books.create!(title: "Daring Greatly", price: 15, rating: 7.0, purchasable_online: true)}
-    let!(:book_6) { author_3.books.create!(title: "Women and Shame, Original Manuscript", price: 225, rating: 9.1, purchasable_online: false)}
+    end
+  end
+
+  describe "when I visit /authors/edit" do
+    # let!(:author_1) { Author.create!(name: "J.K. Rowling", currently_alive: true, age: 57 )}
+    # let!(:author_2) { Author.create!(name: "Maya Angelou", currently_alive: false, age: 86 )}
+    # let!(:author_3) { Author.create!(name: "Brene Brown", currently_alive: true, age: 57 )}
+
+    # let!(:book_1) { author_1.books.create!(title: "Harry Potter and the Sorcerer's Stone", price: 10, rating: 8.9, purchasable_online: true)}
+    # let!(:book_2) { author_1.books.create!(title: "Harry Potter, Original Manuscript", price: 2000, rating: 4.9, purchasable_online: false)}
+    # let!(:book_3) { author_2.books.create!(title: "I Know Why the Caged Bird Sings", price: 24, rating: 9.9, purchasable_online: true)}
+    # let!(:book_4) { author_2.books.create!(title: "Complete Autobiography and Poems", price: 20, rating: 7.9, purchasable_online:false)}
+    # let!(:book_5) { author_3.books.create!(title: "Daring Greatly", price: 15, rating: 7.0, purchasable_online: true)}
+    # let!(:book_6) { author_3.books.create!(title: "Women and Shame, Original Manuscript", price: 225, rating: 9.1, purchasable_online: false)}
     
     it "can edit author's details" do
       visit "/authors/#{author_1.id}/edit"

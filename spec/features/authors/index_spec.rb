@@ -41,8 +41,7 @@ RSpec.describe "/authors (Author Index Page)", type: :feature do
     
     it "shows a link to create a new parent record which routes to a form to create a new record" do
       visit "/authors"
-      expect(page).to have_link("Create New Author")
-      # save_and_open_page
+      save_and_open_page
       click_link("Create New Author")
       expect(current_path).to eq("/authors/new")
     end
