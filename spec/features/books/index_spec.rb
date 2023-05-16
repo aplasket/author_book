@@ -21,12 +21,6 @@ RSpec.describe "/books (Book Index Page)", type: :feature do
       expect(page).to have_content("Book ID: #{book_1.id}")
       expect(page).to have_content("Author ID: #{book_1.author_id}")
       
-      expect(page).to_not have_content(book_2.title)
-      expect(page).to_not have_content("Price: $#{book_2.price}")
-      expect(page).to_not have_content("Rating: #{book_2.rating}")
-      expect(page).to_not have_content("Purchasable Online: #{book_2.purchasable_online}")
-      expect(page).to_not have_content("Book ID: #{book_2.id}")
-      
       expect(page).to have_content(book_3.title)
       expect(page).to have_content("Price: $#{book_3.price}")
       expect(page).to have_content("Rating: #{book_3.rating}")

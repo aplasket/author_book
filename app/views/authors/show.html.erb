@@ -3,5 +3,6 @@
 <p>Age: <%= @author.age %></p>
 <p>ID: <%= @author.id %></p>
 <p>Total Count of Books by this Author: <%= @author.count_books %></p>
-<%= link_to "See All Books by #{@author.name}", "/authors/#{@author.id}/books" %>
-<%= link_to "Update #{@author.name}", "/authors/#{@author.id}/edit" %>
+<%= link_to "See All Books by #{@author.name}", "/authors/#{@author.id}/books" %></br>
+<%= link_to "Update #{@author.name}", "/authors/#{@author.id}/edit" %></br>
+<%= button_to "Delete This Author", "/authors/#{@author.id}", method: :delete %>
