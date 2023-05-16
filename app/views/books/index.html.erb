@@ -1,5 +1,5 @@
 <h1>All Books</h1>
-<% @books.each do |book| %>
+<% @books.can_purchase_online.each do |book| %>
   <h3><%= book.title %></h3>
   <p>Price: $<%= book.price %></p>
   <p>Rating: <%= book.rating %></p>
