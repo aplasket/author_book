@@ -8,4 +8,5 @@
   <p>Author ID: <%= book.author_id %></p></br>
 
   <%= link_to "Update Book", "/books/#{book.id}/edit" %></br></br>
+  <%= button_to "Delete #{book.title}", "/books/#{book.id}", method: :delete%>
 <% end %></br>

@@ -92,5 +92,16 @@ RSpec.describe "/authors/:author_id/books", type: :feature do
       expect(page).to_not have_content(book_1.title)
       expect(page).to_not have_content(book_5.title)
     end
+
+    #user story 23
+    it "I can delete the child from the index page" do
+      visit "/authors/#{author_1.id}/books"
+
+      click_button("Delete #{book_1.title}")
+
+      expect(current_path).to eq("/books")
+      expect(page).to_not have_content("#{book_1.title}")
+
+    end
   end
 end

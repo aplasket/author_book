@@ -22,7 +22,7 @@ RSpec.describe "/books/:id", type: :feature do
     it "I see an option to delete the book" do
       visit "/books/#{book_1.id}"
 
-      click_button("Delete This Book")
+      click_button("Delete #{book_1.title}")
 
       expect(current_path).to eq("/books")
       expect(page).to_not have_content("#{book_1.title}")

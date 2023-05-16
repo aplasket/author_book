@@ -5,4 +5,4 @@
 <p>Book ID: <%= @book.id %></p>
 <p>Author ID: <%= @book.author_id %></p>
 <%= link_to "Update Book", "/books/#{@book.id}/edit" %></br>
-<%= button_to "Delete This Book", "/books/#{@book.id}", method: :delete%>
+<%= button_to "Delete #{@book.title}", "/books/#{@book.id}", method: :delete%>

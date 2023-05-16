@@ -48,5 +48,16 @@ RSpec.describe "/books (Book Index Page)", type: :feature do
       expect(page).to have_content(book_3.price)
       expect(page).to have_content(book_3.purchasable_online)
     end
+
+    #user story 23
+    it "I can delete the child from the index page" do
+      visit "/books"
+
+      click_button("Delete #{book_1.title}")
+
+      expect(current_path).to eq("/books")
+      expect(page).to_not have_content("#{book_1.title}")
+
+    end
   end
 end
