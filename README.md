@@ -197,7 +197,7 @@ I should be taken to that `child_table_name` edit page where I can update its in
 
 
 ## User Story 19, Parent Delete 
-[ ] done
+[x] done
 
 As a visitor
 When I visit a parent show page
