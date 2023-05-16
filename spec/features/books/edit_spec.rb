@@ -12,14 +12,41 @@ RSpec.describe "/books/:id/edit", type: :feature do
       click_link("Update Book")
       expect(current_path).to eq("/books/#{book_1.id}/edit")
       
-      fill_in("Rating", with: 4.1)
+      fill_in("Title", with: "HP's Sorcerer Stone")
       fill_in("Price", with: 8)
+      fill_in("Rating", with: 4.1)
+      fill_in("Purchasable online", with: true)
       
       click_button("Save Changes")
 
       expect(current_path).to eq("/books/#{book_1.id}")
+      expect(page).to have_content("HP's Sorcerer Stone")
       expect(page).to have_content(4.1)
       expect(page).to have_content(8)
+      expect(page).to have_content(true)
+    end
+  end
+
+  describe "As a visitor to /books" do
+    it "I see a link to update each book's info" do
+      visit "/books"
+
+      click_link("Update Book")
+
+      expect(current_path).to eq("/books/#{book_1.id}/edit")
+
+      fill_in("Title", with: "HP's Sorcerer Stone")
+      fill_in("Rating", with: 4.1)
+      fill_in("Price", with: 8)
+      fill_in("Purchasable online", with: true)
+
+      click_button("Save Changes")
+
+      expect(current_path).to eq("/books/#{book_1.id}")
+      expect(page).to have_content("HP's Sorcerer Stone")
+      expect(page).to have_content(4.1)
+      expect(page).to have_content(8)
+      expect(page).to have_content(true)
     end
   end
 end
