@@ -2,18 +2,14 @@ require "rails_helper"
 
 RSpec.describe "/authors/:author_id/books", type: :feature do
 #user story 5:
-  # As a visitor
-  # When I visit '/parents/:parent_id/child_table_name'
-  # Then I see each Child that is associated with that Parent with each Child's attributes
-  # (data from each column that is on the child table)
-
   describe "As a visitor, when I visit the author books index page" do
     let!(:author_1) { Author.create!(name: "J.K. Rowling", currently_alive: true, age: 57 )}
     let!(:author_2) { Author.create!(name: "Maya Angelou", currently_alive: false, age: 86 )}
 
     let!(:book_1) { author_1.books.create!(title: "Harry Potter and the Sorcerer's Stone", price: 10, rating: 8.9, purchasable_online: true)}
-    let!(:book_2) { author_1.books.create!(title: "Harry Potter and the Wild Child", price: 2000, rating: 3.9, purchasable_online: false)}
+    let!(:book_2) { author_1.books.create!(title: "Harry Potter and the Philosopher's Stone", price: 471000, rating: 3.9, purchasable_online: false)}
     let!(:book_3) { author_2.books.create!(title: "I Know Why the Caged Bird Sings", price: 24, rating: 9.9, purchasable_online: true)}
+    let!(:book_4) { author_2.books.create!(title: "Complete Autobiography and Poems", price: 20, rating: 7.9, purchasable_online: false)}
     
     it "I see each book associated with that Author and all of the books' attributes" do
       visit "/authors/#{author_1.id}/books"
@@ -46,17 +42,7 @@ RSpec.describe "/authors/:author_id/books", type: :feature do
     end
 
     #user story 13
-    # As a visitor
-    # When I visit a Parent Children Index page
-    # Then I see a link to add a new adoptable child for that parent "Create Child"
-    # When I click the link
-    # I am taken to '/parents/:parent_id/child_table_name/new' where I see a form to add a new adoptable child
-    # When I fill in the form with the child's attributes:
-    # And I click the button "Create Child"
-    # Then a `POST` request is sent to '/parents/:parent_id/child_table_name',
-    # a new child object/row is created for that parent,
-    # and I am redirected to the Parent Childs Index page where I can see the new child listed
-
+  
     it "can create a new book belonging to this author" do
       visit "/authors/#{author_2.id}/books"
 
@@ -73,6 +59,23 @@ RSpec.describe "/authors/:author_id/books", type: :feature do
 
       expect(current_path).to eq("/authors/#{author_2.id}/books")
       expect(page).to have_content("Letters to My Daughter")
+    end
+
+    #user story 16
+    it "I can see a link to sort books alphabetically" do
+      visit "/authors/#{author_1.id}/books"
+
+      expect(page).to have_link("Sort Books A to Z")
+
+      expect(book_1.title).to appear_before(book_2.title)
+    end
+
+    it "on click, it returns to the index page and can see books in alphabetical order" do
+      visit "/authors/#{author_1.id}/books"
+
+      click_link("Sort Books A to Z")
+
+      expect(book_2.title).to appear_before(book_1.title)
     end
   end
 end

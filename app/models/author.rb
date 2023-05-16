@@ -8,4 +8,8 @@ class Author < ApplicationRecord
   def count_books
     books.count
   end
+
+  def sort_books
+    books.order(:title)
+  end
 end
