@@ -85,7 +85,7 @@ RSpec.describe "/authors/:author_id/books", type: :feature do
 
       fill_in(:price, with: 60)
 
-      click_button("Only return books with a price more than _ ")
+      click_button("Only return books with a price more than this amount")
 
       expect(current_path).to eq("/authors/#{author_1.id}/books")
       expect(page).to have_content(book_2.title)
