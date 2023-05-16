@@ -42,5 +42,11 @@ RSpec.describe Author, type: :model do
         expect(author_1.sort_books).to eq([book_2, book_1])
       end
     end
+
+    describe "#books_over_price" do
+      it "can return a list of books over a give price amount" do
+        expect(author_1.books_over_price(61)).to eq([book_2])
+      end
+    end
   end
 end

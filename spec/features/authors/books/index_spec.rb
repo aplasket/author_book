@@ -8,6 +8,7 @@ RSpec.describe "/authors/:author_id/books", type: :feature do
 
     let!(:book_1) { author_1.books.create!(title: "Harry Potter and the Sorcerer's Stone", price: 10, rating: 8.9, purchasable_online: true)}
     let!(:book_2) { author_1.books.create!(title: "Harry Potter and the Philosopher's Stone", price: 471000, rating: 3.9, purchasable_online: false)}
+    let!(:book_5) { author_1.books.create!(title: "Harry Potter's Secret", price: 3, rating: 2.9, purchasable_online: true)}
     let!(:book_3) { author_2.books.create!(title: "I Know Why the Caged Bird Sings", price: 24, rating: 9.9, purchasable_online: true)}
     let!(:book_4) { author_2.books.create!(title: "Complete Autobiography and Poems", price: 20, rating: 7.9, purchasable_online: false)}
     
@@ -76,6 +77,20 @@ RSpec.describe "/authors/:author_id/books", type: :feature do
       click_link("Sort Books A to Z")
 
       expect(book_2.title).to appear_before(book_1.title)
+    end
+
+    #user story 21
+    it "I see a form to input a value to return a certain number of records" do
+      visit "/authors/#{author_1.id}/books"
+
+      fill_in(:price, with: 60)
+
+      click_button("Only return books with a price more than _ ")
+
+      expect(current_path).to eq("/authors/#{author_1.id}/books")
+      expect(page).to have_content(book_2.title)
+      expect(page).to_not have_content(book_1.title)
+      expect(page).to_not have_content(book_5.title)
     end
   end
 end

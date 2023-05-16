@@ -1,4 +1,7 @@
 <h1><%= @author.name %></h1>
+<%= link_to "Sort Books A to Z", sort: "AZ" %></br></br>
+<%= button_to "Create New Book", "/authors/#{@author.id}/books/new", method: :get %></br>
+
 <% @books.each do |book| %>
   <h3>Title: <%= book.title %></h3>
   <p>Price: $<%= book.price %></p>
@@ -10,5 +13,9 @@
   <%= link_to "Update Book", "/books/#{book.id}/edit" %>
 <% end %>
 
-<%= button_to "Create New Book", "/authors/#{@author.id}/books/new", method: :get %>
-<%= link_to "Sort Books A to Z", sort: "AZ" %>
+
+<%= form_with url: "/authors/#{@author.id}/books", method: :get, local: true do |form| %>
+  <%= form.label :price, "Enter a price" %>
+  <%= form.number_field :price %>
+  <%= form.submit "Only return books with a price more than _ " %>
+<% end %>

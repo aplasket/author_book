@@ -12,4 +12,8 @@ class Author < ApplicationRecord
   def sort_books
     books.order(:title)
   end
+
+  def books_over_price(num)
+    books.where("price > #{num}")
+  end
 end
