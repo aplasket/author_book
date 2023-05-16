@@ -30,7 +30,6 @@ let!(:book_6) { author_3.books.create!(title: "Women and Shame, Original Manuscr
   describe "when I visit /authors" do
     it "I see a link next to each author to update their info" do
       visit "/authors"
-      save_and_open_page
 
       click_link "Update #{author_1.name}"
 
