@@ -1,13 +1,12 @@
-# module Authors
-#   class BooksController < ApplicationController
-
-#   end
-# end
-
 class Authors::BooksController < ApplicationController
   def index
     @author = Author.find(params[:author_id])
-    @books = @author.books
+
+    if params[:sort] == "AZ"
+      @books = @author.sort_books
+    else
+      @books = @author.books
+    end
   end
 
   def new
