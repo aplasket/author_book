@@ -9,5 +9,4 @@
 <% end %>
 
 <%= button_to "Create New Book", "/authors/#{@author.id}/books/new", method: :get %>
-<%#= link_to "Sort Books A to Z", "/authors/#{@author.id}/books?sort=AZ" %>
 <%= link_to "Sort Books A to Z", sort: "AZ" %>
