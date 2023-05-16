@@ -42,7 +42,7 @@ RSpec.describe "/authors/:id (Author ID Page)", type: :feature do
     #user story #19
     it "I see a link to delete the Author" do
       visit "/authors/#{author_1.id}"
-save_and_open_page
+
       click_button("Delete This Author")
 
       expect(current_path).to eq("/authors")
