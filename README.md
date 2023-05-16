@@ -174,7 +174,7 @@ I'm taken back to the Parent's children Index Page where I see all of the parent
 
 ### Usability
 ## User Story 17, Parent Update From Parent Index Page 
-[ ] done
+[x] done
 
 As a visitor
 When I visit the parent index page
