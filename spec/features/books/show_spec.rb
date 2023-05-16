@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "/books/:id", type: :feature do
-   #user story #4
+  #user story #4
   describe "As a visitor, when I visit /books/:id" do
     let!(:author_1) { Author.create!(name: "J.K. Rowling", currently_alive: true, age: 57 )}
     let!(:author_2) { Author.create!(name: "Maya Angelou", currently_alive: false, age: 86 )}

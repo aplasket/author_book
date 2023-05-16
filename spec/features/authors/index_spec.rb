@@ -8,7 +8,7 @@ RSpec.describe "/authors (Author Index Page)", type: :feature do
 
     it "I see the name of each author" do
       visit "/authors"
-      # save_and_open_page
+      
       expect(page).to have_content("Authors")
       expect(page).to have_content(author_1.name)
       expect(page).to have_content(author_2.name)
@@ -25,25 +25,18 @@ RSpec.describe "/authors (Author Index Page)", type: :feature do
     it "shows when each author was created, sorted by most recent creation date" do
       visit "/authors"
 
-      # save_and_open_page
-
       expect(author_2.name).to appear_before(author_1.name)
       expect(page).to have_content(author_1.created_at)
       expect(page).to have_content(author_2.created_at)
       expect(page).to have_content(author_3.created_at)
     end
 
-    #user story 11
-    # As a visitor
-    # When I visit the Parent Index page
-    # Then I see a link to create a new Parent record, "New Parent"
-    # When I click this link, it routes to /authors/new 
-    
+    #user story 11    
     it "shows a link to create a new parent record which routes to a form to create a new record" do
       visit "/authors"
-      expect(page).to have_link("Create New Author")
-      # save_and_open_page
+      
       click_link("Create New Author")
+
       expect(current_path).to eq("/authors/new")
     end
   end

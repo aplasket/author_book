@@ -164,7 +164,7 @@ Then I only see records where the boolean column is `true`
 
 
 ## User Story 16, Sort Parent's Children in Alphabetical Order by name 
-[ ] done
+[x] done
 
 As a visitor
 When I visit the Parent's children Index Page

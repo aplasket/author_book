@@ -33,16 +33,9 @@ RSpec.describe "/books (Book Index Page)", type: :feature do
       expect(page).to have_content("Purchasable Online: #{book_3.purchasable_online}")
       expect(page).to have_content("Book ID: #{book_3.id}")
       expect(page).to have_content("Author ID: #{book_3.author_id}")
-      
-      # save_and_open_page
     end
 
     #userstory #15 
-
-    # As a visitor
-    # When I visit the child index
-    # Then I only see records where the boolean column is `true`
-
     it "I only see records where purchasable online is true" do
       visit "/books"
       
