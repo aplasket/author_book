@@ -19,9 +19,9 @@ let!(:book_6) { author_3.books.create!(title: "Women and Shame, Original Manuscr
     #user story 12
     it "shows a button to update the author" do
       visit "/authors/#{author_1.id}"
-      expect(page).to have_content("Update #{author_1.name}")
 
       click_link("Update #{author_1.name}")
+      
       expect(current_path).to eq("/authors/#{author_1.id}/edit")
     end
   end
@@ -29,12 +29,17 @@ let!(:book_6) { author_3.books.create!(title: "Women and Shame, Original Manuscr
   #user story #17
   describe "when I visit /authors" do
     it "I see a link next to each author to update their info" do
+      visit "/authors"
+      save_and_open_page
 
+      click_link "Update #{author_1.name}"
+
+      expect(current_path).to eq("/authors/#{author_1.id}/edit")
     end
   end
 
   #user story 12
-  describe "when I visit /authors/edit" do
+  describe "when I visit /authors/:id/edit" do
     it "can edit author's details" do
       visit "/authors/#{author_1.id}/edit"
       
