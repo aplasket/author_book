@@ -221,7 +221,7 @@ and I am redirected to the child index page where I no longer see this child
 
 ### ActiveRecord
 ## User Story 21, Display Records Over a Given Threshold 
-[ ] done
+[x] done
 
 As a visitor
 When I visit the Parent's children Index Page
