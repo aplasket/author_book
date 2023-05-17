@@ -103,5 +103,13 @@ RSpec.describe "/authors/:author_id/books", type: :feature do
       expect(page).to_not have_content("#{book_1.title}")
 
     end
+
+    it "I can go back to the parent page" do
+      visit "/authors/#{author_1.id}/books"
+
+      click_button("Checkout #{author_1.name}'s Details")
+
+      expect(current_path).to eq("/authors/#{author_1.id}")
+    end
   end
 end

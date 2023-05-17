@@ -71,7 +71,7 @@ RSpec.describe "/authors (Author Index Page)", type: :feature do
     it "I can click link to author's details /authors/id" do
       visit "/authors"
 
-      click_button("Check Out #{author_1.name}'s Details")
+      click_button("Checkout #{author_1.name}'s Details")
 
       expect(current_path).to eq("/authors/#{author_1.id}")
     end
