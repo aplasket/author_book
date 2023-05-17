@@ -50,4 +50,31 @@ RSpec.describe "/authors (Author Index Page)", type: :feature do
     end
   end
 
+  describe "has links to navigate to /id and /id/books" do
+    let!(:author_1) { Author.create!(name: "J.K. Rowling", currently_alive: true, age: 57 )}
+    let!(:author_2) { Author.create!(name: "Maya Angelou", currently_alive: false, age: 86 )}
+
+    let!(:book_1) { author_1.books.create!(title: "Harry Potter and the Sorcerer's Stone", price: 10, rating: 8.9, purchasable_online: true)}
+    let!(:book_2) { author_1.books.create!(title: "Harry Potter and the Philosopher's Stone", price: 471000, rating: 3.9, purchasable_online: false)}
+    let!(:book_5) { author_1.books.create!(title: "Harry Potter's Secret", price: 3, rating: 2.9, purchasable_online: true)}
+    let!(:book_3) { author_2.books.create!(title: "I Know Why the Caged Bird Sings", price: 24, rating: 9.9, purchasable_online: true)}
+    let!(:book_4) { author_2.books.create!(title: "Complete Autobiography and Poems", price: 20, rating: 7.9, purchasable_online: false)}
+    
+    it "I can click link to go to the authors/id/books" do
+      visit "/authors"
+
+      click_button("See All Books by #{author_1.name}")
+
+      expect(current_path).to eq("/authors/#{author_1.id}/books")
+    end
+
+    it "I can click link to author's details /authors/id" do
+      visit "/authors"
+
+      click_button("Checkout #{author_1.name}'s Details")
+
+      expect(current_path).to eq("/authors/#{author_1.id}")
+    end
+  end
+
 end
