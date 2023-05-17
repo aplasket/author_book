@@ -6,5 +6,7 @@
   <p><b>Created At: </b><%= author.created_at %></p>
 
   <%= link_to "Update #{author.name}", "/authors/#{author.id}/edit" %></br>
+  <%= button_to "Check Out #{author.name}'s Details", "/authors/#{author.id}", method: :get %></br>
+  <%= button_to "See All Books by #{author.name}", "/authors/#{author.id}/books", method: :get %></br>
   <%= button_to "Delete #{author.name}", "/authors/#{author.id}", method: :delete %></br></br>
 <% end %></br>
